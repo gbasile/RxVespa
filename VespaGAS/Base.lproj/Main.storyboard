@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gas Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GasCalculatorViewController" customModule="VespaGAS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="yrx-yc-nWR">
+                                <rect key="frame" x="18" y="98" width="564" height="31"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="pvK-H0-aht">
+                                <rect key="frame" x="18" y="216" width="564" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oil Mixture: 2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQi-gk-qix">
+                                <rect key="frame" x="20" y="69" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gasoline: 4L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68O-Se-znf">
+                                <rect key="frame" x="20" y="187" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbm-Mo-T71">
+                                <rect key="frame" x="20" y="246" width="560" height="354"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFb-4m-HaS">
+                                        <rect key="frame" x="212" y="141" width="136" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TFb-4m-HaS" firstAttribute="centerX" secondItem="tbm-Mo-T71" secondAttribute="centerX" id="Y5E-l1-mlu"/>
+                                    <constraint firstItem="TFb-4m-HaS" firstAttribute="centerY" secondItem="tbm-Mo-T71" secondAttribute="centerY" id="bMN-0u-AwQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tbm-Mo-T71" firstAttribute="top" secondItem="pvK-H0-aht" secondAttribute="bottom" id="2qO-Xc-EuH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oQi-gk-qix" secondAttribute="trailing" id="4cn-HJ-heg"/>
+                            <constraint firstItem="oQi-gk-qix" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="49" id="52E-yP-G2D"/>
+                            <constraint firstItem="pvK-H0-aht" firstAttribute="top" secondItem="68O-Se-znf" secondAttribute="bottom" constant="8" id="Bkt-d8-HNH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pvK-H0-aht" secondAttribute="leading" id="Mao-UW-SLy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oQi-gk-qix" secondAttribute="leading" id="OB8-12-bAz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yrx-yc-nWR" secondAttribute="leading" id="QQo-Er-S49"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tbm-Mo-T71" secondAttribute="bottom" id="RAQ-eJ-fux"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="68O-Se-znf" secondAttribute="leading" id="RQe-lM-SGU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tbm-Mo-T71" secondAttribute="trailing" id="VED-cE-u9I"/>
+                            <constraint firstItem="tbm-Mo-T71" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="X70-9D-t1c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yrx-yc-nWR" secondAttribute="trailing" id="jJ2-gW-rGG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="68O-Se-znf" secondAttribute="trailing" id="pZ3-ha-16Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pvK-H0-aht" secondAttribute="trailing" id="rdC-e4-YDB"/>
+                            <constraint firstItem="yrx-yc-nWR" firstAttribute="top" secondItem="oQi-gk-qix" secondAttribute="bottom" constant="8" id="vQX-O7-NI6"/>
+                            <constraint firstItem="68O-Se-znf" firstAttribute="top" secondItem="yrx-yc-nWR" secondAttribute="bottom" constant="59" id="wX2-5P-M7J"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gasLabel" destination="68O-Se-znf" id="LAX-VB-Prt"/>
+                        <outlet property="gasSlider" destination="pvK-H0-aht" id="bu6-IG-dbT"/>
+                        <outlet property="oilLabel" destination="oQi-gk-qix" id="LZ6-mb-Fzc"/>
+                        <outlet property="oilSlider" destination="yrx-yc-nWR" id="5Nk-Vg-YlA"/>
+                        <outlet property="oilValueLabel" destination="TFb-4m-HaS" id="ztg-Xh-t42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="695" y="327"/>
         </scene>
     </scenes>
 </document>

@@ -1,10 +1,10 @@
 import Foundation
 
-typealias GasType = Double
-typealias OilType = Double
-typealias OilMixType = Double
+typealias GasType = Float
+typealias OilType = Float
+typealias OilMixType = Float
 
-let MLInLiter: Double = 1000
+let MLInLiter: Float = 1000
 
 struct OilMixCalculator {
     static func oilMLForGasoline(gasInLiter: GasType, oilPercentage: OilMixType) -> OilType? {
