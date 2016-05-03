@@ -109,4 +109,50 @@ class GasCalculatorViewModelTests: XCTestCase {
 
         self.waitForExpectationsWithTimeout(0.1, handler: nil)
     }
+
+    //MARK: GasValueObservable
+    func testViewModelHasGasObservable() {
+        let viewModel = GasCalculatorViewModel(
+            gasObservable: Observable.empty(),
+            oilPercentageObservable: Observable.empty()
+        )
+
+        XCTAssertNotNil(viewModel.gasValueObservable)
+    }
+
+    func testGasVaueObservableIsInitalisedWith0() {
+        let expectation = self.expectationWithDescription("Gas Value should start with 0L")
+
+        let viewModel = GasCalculatorViewModel(
+            gasObservable: Observable.empty(),
+            oilPercentageObservable: Observable.empty()
+        )
+
+        var isFirstEvent = true
+        _ = viewModel.gasValueObservable.subscribeNext { (oilValue) in
+            if (isFirstEvent) {
+                XCTAssertEqual("0L", oilValue)
+                expectation.fulfill()
+                isFirstEvent = false
+            }
+            }.addDisposableTo(disposeBag)
+
+        self.waitForExpectationsWithTimeout(0.1, handler: nil)
+    }
+
+    func testGasValueObservableIsCorrectWhen3Liters() {
+        let expectation = self.expectationWithDescription("Gas Value should be 3L")
+
+        let viewModel = GasCalculatorViewModel(
+            gasObservable: Observable.just(3),
+            oilPercentageObservable: Observable.empty()
+        )
+
+        _ = viewModel.gasValueObservable.subscribeNext { oilValue in
+            XCTAssertEqual("3.0L", oilValue)
+            expectation.fulfill()
+            }.addDisposableTo(disposeBag)
+
+        self.waitForExpectationsWithTimeout(0.1, handler: nil)
+    }
 }

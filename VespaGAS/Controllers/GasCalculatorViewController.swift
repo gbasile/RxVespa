@@ -23,6 +23,10 @@ class GasCalculatorViewController: UIViewController {
         _ = viewModel?.oilValueObservable.subscribeNext { oilValue in
             self.oilLabel.text = oilValue
         }
+
+        _ = viewModel?.gasValueObservable.subscribeNext { gasValue in
+            self.gasLabel.text = gasValue
+        }
     }
 
     @IBAction func sliderValueDidChange(sender: UISlider) {
