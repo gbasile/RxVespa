@@ -2,10 +2,10 @@ import Foundation
 import RxSwift
 
 public struct GasCalculatorViewModel {
-    var oilValueObservable: Observable<String> = Observable.empty()
+    var oilMixObservable: Observable<String> = Observable.empty()
 
     init(gasObservable: Observable<GasType>, oilPercentageObservable: Observable<OilMixType>) {
-        oilValueObservable = Observable.combineLatest(gasObservable, oilPercentageObservable) { (gasInLiter, oilPercentage) -> String in
+        oilMixObservable = Observable.combineLatest(gasObservable, oilPercentageObservable) { (gasInLiter, oilPercentage) -> String in
             if let oilValue = OilMixCalculator.oilMLForGasoline(gasInLiter, oilPercentage: oilPercentage) {
                 return "\(Int(round(oilValue)))ml"
             } else {

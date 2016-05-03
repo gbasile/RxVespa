@@ -5,22 +5,14 @@ import RxSwift
 class GasCalculatorViewModelTests: XCTestCase {
     let disposeBag = DisposeBag()
 
-    func testViewModelIsNotNil() {
-        let viewModel = GasCalculatorViewModel(
-            gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.empty()
-        )
-
-        XCTAssertNotNil(viewModel)
-    }
-
+    //MARK: oilMixObservable
     func testViewModelHasOilValueObservable() {
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
             oilPercentageObservable: Observable.empty()
         )
 
-        XCTAssertNotNil(viewModel.oilValueObservable)
+        XCTAssertNotNil(viewModel.oilMixObservable)
     }
 
     func testOilValueObservableIsInitialisedWith0() {
@@ -31,7 +23,7 @@ class GasCalculatorViewModelTests: XCTestCase {
             oilPercentageObservable: Observable.empty()
         )
 
-        _ = viewModel.oilValueObservable.subscribeNext { (oilML) in
+        _ = viewModel.oilMixObservable.subscribeNext { (oilML) in
             XCTAssertEqual("0ml", oilML)
             expectation.fulfill()
         }.addDisposableTo(disposeBag)
@@ -48,7 +40,7 @@ class GasCalculatorViewModelTests: XCTestCase {
         )
 
         var isFirstEvent = true
-        _ = viewModel.oilValueObservable.subscribeNext { (oilML) in
+        _ = viewModel.oilMixObservable.subscribeNext { (oilML) in
                 if isFirstEvent {
                     isFirstEvent = false
                 } else {
@@ -69,7 +61,7 @@ class GasCalculatorViewModelTests: XCTestCase {
         )
 
         var isFirstEvent = true
-        _ = viewModel.oilValueObservable.subscribeNext { (oilML) in
+        _ = viewModel.oilMixObservable.subscribeNext { (oilML) in
             if isFirstEvent {
                 isFirstEvent = false
             } else {
@@ -80,4 +72,5 @@ class GasCalculatorViewModelTests: XCTestCase {
 
         self.waitForExpectationsWithTimeout(0.5, handler: nil)
     }
+
 }

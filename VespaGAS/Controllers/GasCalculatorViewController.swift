@@ -15,7 +15,7 @@ class GasCalculatorViewController: UIViewController {
 
     override func viewDidLoad() {
         viewModel = GasCalculatorViewModel(gasObservable: self.gasSlider.rx_value.asObservable(), oilPercentageObservable: self.oilSlider.rx_value.asObservable())
-        _ = viewModel?.oilValueObservable.subscribeNext({ oilValue in
+        _ = viewModel?.oilMixObservable.subscribeNext({ oilValue in
             self.oilValueLabel.text = oilValue
         }).addDisposableTo(disposeBag)
     }
