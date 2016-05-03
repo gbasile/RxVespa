@@ -20,9 +20,15 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="yrx-yc-nWR">
                                 <rect key="frame" x="18" y="98" width="564" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="efZ-to-fNa"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="pvK-H0-aht">
                                 <rect key="frame" x="18" y="216" width="564" height="31"/>
+                                <connections>
+                                    <action selector="sliderGasValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="eFF-lw-jzF"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oil Mixture: 2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQi-gk-qix">
                                 <rect key="frame" x="20" y="69" width="560" height="21"/>
