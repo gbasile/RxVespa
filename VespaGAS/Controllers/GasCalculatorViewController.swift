@@ -22,11 +22,11 @@ class GasCalculatorViewController: UIViewController {
 
         _ = viewModel?.oilValueObservable.subscribeNext { oilValue in
             self.oilLabel.text = oilValue
-        }
+        }.addDisposableTo(disposeBag)
 
         _ = viewModel?.gasValueObservable.subscribeNext { gasValue in
             self.gasLabel.text = gasValue
-        }
+        }.addDisposableTo(disposeBag)
     }
 
     @IBAction func sliderValueDidChange(sender: UISlider) {
