@@ -14,10 +14,18 @@ class GasCalculatorViewController: UIViewController {
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
-        viewModel = GasCalculatorViewModel(gasObservable: self.gasSlider.rx_value.asObservable(),
-                                           oilPercentageObservable: self.oilSlider.rx_value.asObservable())
+        let gasolineObservable = self.gasSlider.rx_value.asObservable().map { (amount) -> Gasoline in
+            return Gasoline(amount: amount, unit: .Liter)
+        }
 
-        _ = viewModel?.oilMixObservable.subscribeNext { oilValue in
+        let oilMixObservable = self.oilSlider.rx_value.asObservable().map { (amount) -> OilMix in
+            return OilMix(amount: amount)
+        }
+
+        viewModel = GasCalculatorViewModel(gasObservable: gasolineObservable,
+                                           oilMixObservable: oilMixObservable)
+
+        _ = viewModel?.oilMixValueObservable.subscribeNext { oilValue in
             self.oilValueLabel.text = oilValue
         }.addDisposableTo(disposeBag)
 
@@ -30,11 +38,11 @@ class GasCalculatorViewController: UIViewController {
         }.addDisposableTo(disposeBag)
     }
 
-    @IBAction func sliderValueDidChange(sender: UISlider) {
+    @IBAction func sliderOilMixDidChange(sender: UISlider) {
         sender.value = round(sender.value)
     }
 
-    @IBAction func sliderGasValueDidChange(sender: UISlider) {
+    @IBAction func sliderGasolineValueDidChange(sender: UISlider) {
         sender.value = round(sender.value * 10) / 10
     }
 }

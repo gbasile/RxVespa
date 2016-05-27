@@ -3,34 +3,36 @@ import RxSwift
 
 struct GasCalculatorViewModel {
     private let disposeBag = DisposeBag()
-    private let oilValueSubject = BehaviorSubject(value: "0%")
-    private let gasValueSubject = BehaviorSubject(value: "0L")
+    private let oilValueSubject = BehaviorSubject(value: OilMix(amount:0))
+    private let gasValueSubject = BehaviorSubject(value: Gasoline(amount:0, unit:.Liter))
 
-    var oilMixObservable: Observable<String> = Observable.empty()
+    var oilMixValueObservable: Observable<String> = Observable.empty()
     var oilValueObservable: Observable<String> {
-        return oilValueSubject.asObservable()
+        return oilValueSubject.asObservable().map({ (oilMix) -> String in
+            return oilMix.description
+        })
     }
+
     var gasValueObservable: Observable<String> {
-        return gasValueSubject.asObservable()
+        return gasValueSubject.asObservable().map({ (gasoline) -> String in
+            return gasoline.description
+        })
     }
 
-    init(gasObservable: Observable<GasType>, oilPercentageObservable: Observable<OilMixType>) {
-        oilMixObservable = Observable.combineLatest(gasObservable, oilPercentageObservable) { (gasInLiter, oilPercentage) -> String in
-            if let oilValue = OilMixCalculator.oilMLForGasoline(gasInLiter, oilPercentage: oilPercentage) {
-                return "\(Int(round(oilValue)))ml"
-            } else {
-                return "Error"
-            }
-        }.startWith("0ml")
+    init(gasObservable: Observable<Gasoline>, oilMixObservable: Observable<OilMix>) {
+        oilMixValueObservable = Observable.combineLatest(gasObservable, oilMixObservable) { (gasoline, oilMix) -> String in
+            let oil = OilMixCalculator.oilFor(gasoline, oilMix: oilMix)
+            return oil.toUnit(.Milliliter).roundAmount().description.lowercaseString
+        }.startWith(Oil(amount: 0, unit: .Milliliter).description.lowercaseString)
 
-        oilPercentageObservable.subscribeNext() { oilValue in
-            let text = "\(Int(oilValue))%"
-            self.oilValueSubject.onNext(text)
+        oilMixObservable.subscribeNext() { oilMix in
+            let oilSubject = self.oilValueSubject
+            oilSubject.onNext(oilMix)
         }.addDisposableTo(disposeBag)
 
         gasObservable.subscribeNext() { gasValue in
-            let text = "\(gasValue)L"
-            self.gasValueSubject.onNext(text)
+            let gasSubject = self.gasValueSubject
+            gasSubject.onNext(gasValue)
         }.addDisposableTo(disposeBag)
     }
 }

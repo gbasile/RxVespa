@@ -11,10 +11,10 @@ class GasCalculatorViewModelTests: XCTestCase {
 
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.empty()
+            oilMixObservable: Observable.empty()
         )
 
-        _ = viewModel.oilMixObservable.subscribeNext { (oilML) in
+        _ = viewModel.oilMixValueObservable.subscribeNext { (oilML) in
             XCTAssertEqual("0ml", oilML)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
@@ -26,12 +26,12 @@ class GasCalculatorViewModelTests: XCTestCase {
         let expectation = self.expectationWithDescription("Oil Observable should be 10")
 
         let viewModel = GasCalculatorViewModel(
-            gasObservable: Observable.just(1),
-            oilPercentageObservable: Observable.just(1)
+            gasObservable: Observable.just(Gasoline(amount: 1, unit: .Liter)),
+            oilMixObservable: Observable.just(OilMix(amount: 1))
         )
 
         var isFirstEvent = true
-        _ = viewModel.oilMixObservable.subscribeNext { (oilML) in
+        _ = viewModel.oilMixValueObservable.subscribeNext { (oilML) in
             if isFirstEvent {
                 isFirstEvent = false
             } else {
@@ -47,12 +47,12 @@ class GasCalculatorViewModelTests: XCTestCase {
         let expectation = self.expectationWithDescription("Oil Observable should be 13")
 
         let viewModel = GasCalculatorViewModel(
-            gasObservable: Observable.just(1.23),
-            oilPercentageObservable: Observable.just(1.5)
+            gasObservable: Observable.just(Gasoline(amount: 1.23, unit: .Liter)),
+            oilMixObservable: Observable.just(OilMix(amount: 1.5))
         )
 
         var isFirstEvent = true
-        _ = viewModel.oilMixObservable.subscribeNext { (oilML) in
+        _ = viewModel.oilMixValueObservable.subscribeNext { (oilML) in
             if isFirstEvent {
                 isFirstEvent = false
             } else {
@@ -68,7 +68,7 @@ class GasCalculatorViewModelTests: XCTestCase {
     func testViewModelHasOilValueObservable() {
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.empty()
+            oilMixObservable: Observable.empty()
         )
 
         XCTAssertNotNil(viewModel.oilValueObservable)
@@ -79,7 +79,7 @@ class GasCalculatorViewModelTests: XCTestCase {
 
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.empty()
+            oilMixObservable: Observable.empty()
         )
 
         var isFirstEvent = true
@@ -99,7 +99,7 @@ class GasCalculatorViewModelTests: XCTestCase {
 
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.just(2)
+            oilMixObservable: Observable.just(OilMix(amount: 2))
         )
 
         _ = viewModel.oilValueObservable.subscribeNext { oilValue in
@@ -114,7 +114,7 @@ class GasCalculatorViewModelTests: XCTestCase {
     func testViewModelHasGasObservable() {
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.empty()
+            oilMixObservable: Observable.empty()
         )
 
         XCTAssertNotNil(viewModel.gasValueObservable)
@@ -125,7 +125,7 @@ class GasCalculatorViewModelTests: XCTestCase {
 
         let viewModel = GasCalculatorViewModel(
             gasObservable: Observable.empty(),
-            oilPercentageObservable: Observable.empty()
+            oilMixObservable: Observable.empty()
         )
 
         var isFirstEvent = true
@@ -144,12 +144,12 @@ class GasCalculatorViewModelTests: XCTestCase {
         let expectation = self.expectationWithDescription("Gas Value should be 3L")
 
         let viewModel = GasCalculatorViewModel(
-            gasObservable: Observable.just(3),
-            oilPercentageObservable: Observable.empty()
+            gasObservable: Observable.just(Gasoline(amount: 3, unit: .Liter)),
+            oilMixObservable: Observable.empty()
         )
 
         _ = viewModel.gasValueObservable.subscribeNext { oilValue in
-            XCTAssertEqual("3.0L", oilValue)
+            XCTAssertEqual("3L", oilValue)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
 
