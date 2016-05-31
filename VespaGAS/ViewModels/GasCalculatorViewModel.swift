@@ -21,7 +21,7 @@ struct GasCalculatorViewModel {
 
     init(gasObservable: Observable<Gasoline>, oilMixObservable: Observable<OilMix>) {
         oilMixValueObservable = Observable.combineLatest(gasObservable, oilMixObservable) { (gasoline, oilMix) -> String in
-            let oil = OilMixCalculator.oilFor(gasoline, oilMix: oilMix)
+            let oil = oilMix.oilForGasoline(gasoline)
             return oil.toUnit(.Milliliter).roundAmount().description.lowercaseString
         }.startWith(Oil(amount: 0, unit: .Milliliter).description.lowercaseString)
 
