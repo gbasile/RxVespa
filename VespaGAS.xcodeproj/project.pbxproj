@@ -15,7 +15,6 @@
 		B87127451CF8C57D00EEA78D /* VolumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87127441CF8C57D00EEA78D /* VolumeTests.swift */; };
 		B87127481CF8C90E00EEA78D /* Float+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87127471CF8C90E00EEA78D /* Float+extensions.swift */; };
 		B871274A1CF8EBFF00EEA78D /* OilMix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87127491CF8EBFF00EEA78D /* OilMix.swift */; };
-		B88B81F41CD7AA9F00172162 /* OilMixCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B81F31CD7AA9F00172162 /* OilMixCalculatorTests.swift */; };
 		B8A798931CD7A1FC00382995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798921CD7A1FC00382995 /* AppDelegate.swift */; };
 		B8A798981CD7A1FC00382995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A798961CD7A1FC00382995 /* Main.storyboard */; };
 		B8A7989A1CD7A1FC00382995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A798991CD7A1FC00382995 /* Assets.xcassets */; };
@@ -47,7 +46,6 @@
 		B87127441CF8C57D00EEA78D /* VolumeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeTests.swift; sourceTree = "<group>"; };
 		B87127471CF8C90E00EEA78D /* Float+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+extensions.swift"; sourceTree = "<group>"; };
 		B87127491CF8EBFF00EEA78D /* OilMix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilMix.swift; sourceTree = "<group>"; };
-		B88B81F31CD7AA9F00172162 /* OilMixCalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilMixCalculatorTests.swift; sourceTree = "<group>"; };
 		B8A7988F1CD7A1FC00382995 /* VespaGAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VespaGAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A798921CD7A1FC00382995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A798971CD7A1FC00382995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,14 +122,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B88B81F21CD7AA5000172162 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				B88B81F31CD7AA9F00172162 /* OilMixCalculatorTests.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		B8A798861CD7A1FC00382995 = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +164,6 @@
 				B87127431CF8C57200EEA78D /* Models */,
 				B8A798B41CD7A23200382995 /* Controllers */,
 				B8A798A91CD7A1FC00382995 /* Info.plist */,
-				B88B81F21CD7AA5000172162 /* Managers */,
 				B8A798B51CD7A23200382995 /* ViewModels */,
 			);
 			path = VespaGASTests;
@@ -381,7 +370,6 @@
 				B8A798B91CD7A26A00382995 /* GasCalculatorViewModelTests.swift in Sources */,
 				B85248911CFD95C700B4AEF7 /* OilMixTests.swift in Sources */,
 				B87127451CF8C57D00EEA78D /* VolumeTests.swift in Sources */,
-				B88B81F41CD7AA9F00172162 /* OilMixCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
