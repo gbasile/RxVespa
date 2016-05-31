@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B80DD8CD1CD8AC5500ED9FEE /* GasCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80DD8CC1CD8AC5500ED9FEE /* GasCalculatorViewController.swift */; };
+		B811685F1CFE4D3700301A0A /* GasolineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811685E1CFE4D3700301A0A /* GasolineTests.swift */; };
 		B85248911CFD95C700B4AEF7 /* OilMixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85248901CFD95C700B4AEF7 /* OilMixTests.swift */; };
 		B85248931CFD975B00B4AEF7 /* Oil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85248921CFD975B00B4AEF7 /* Oil.swift */; };
 		B85248951CFD976700B4AEF7 /* Gasoline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85248941CFD976700B4AEF7 /* Gasoline.swift */; };
@@ -39,6 +40,7 @@
 		7E9F3BE469715CE90A55CB74 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AEFD677CBA429BE19A7485F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B80DD8CC1CD8AC5500ED9FEE /* GasCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasCalculatorViewController.swift; sourceTree = "<group>"; };
+		B811685E1CFE4D3700301A0A /* GasolineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasolineTests.swift; sourceTree = "<group>"; };
 		B85248901CFD95C700B4AEF7 /* OilMixTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilMixTests.swift; sourceTree = "<group>"; };
 		B85248921CFD975B00B4AEF7 /* Oil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oil.swift; sourceTree = "<group>"; };
 		B85248941CFD976700B4AEF7 /* Gasoline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gasoline.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				B87127441CF8C57D00EEA78D /* VolumeTests.swift */,
 				B85248901CFD95C700B4AEF7 /* OilMixTests.swift */,
+				B811685E1CFE4D3700301A0A /* GasolineTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				B8A798B91CD7A26A00382995 /* GasCalculatorViewModelTests.swift in Sources */,
 				B85248911CFD95C700B4AEF7 /* OilMixTests.swift in Sources */,
 				B87127451CF8C57D00EEA78D /* VolumeTests.swift in Sources */,
+				B811685F1CFE4D3700301A0A /* GasolineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

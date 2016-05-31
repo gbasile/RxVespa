@@ -23,26 +23,34 @@ enum VolumeUnit: CustomStringConvertible {
     }
 }
 
-struct Volume: CustomStringConvertible, Equatable {
-    let amount: Float
-    let unit: VolumeUnit
+protocol Volume: CustomStringConvertible, Equatable {
+    var amount: Float {get set}
+    var unit: VolumeUnit {get set}
+
+    init(amount: Float, unit: VolumeUnit)
+    func toUnit(newUnit: VolumeUnit) -> Self
+    func amountInUnit(unit: VolumeUnit) -> Float
+    func roundAmount() -> Self
+}
+
+extension Volume {
     var description: String {
-        return "\(amount.cleanValue)\(unit.description)"
+        return "\(round(amount).cleanValue)\(unit)"
     }
 
-    func toUnit(newUnit: VolumeUnit) -> Volume {
-        return Volume(amount: self.amountInUnit(newUnit), unit: newUnit)
+    func toUnit(newUnit: VolumeUnit) -> Self {
+        return Self(amount: self.amountInUnit(newUnit), unit: newUnit)
     }
 
     func amountInUnit(unit: VolumeUnit) -> Float {
         return amount * unit.inLiter() / self.unit.inLiter()
     }
 
-    func roundAmount() -> Volume {
-        return Volume(amount: round(self.amount), unit: unit)
+    func roundAmount() -> Self {
+        return Self(amount: round(amount), unit: unit)
     }
 }
 
-func ==(lhs: Volume, rhs: Volume) -> Bool {
+func ==<A where A:Volume>(lhs: A, rhs: A) -> Bool {
     return lhs.amount == rhs.amount && lhs.unit == rhs.unit
 }
