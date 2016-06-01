@@ -2,8 +2,6 @@ import Foundation
 import RxSwift
 
 struct GasCalculatorViewModel {
-    private let disposeBag = DisposeBag()
-
     let oilMixValueObservable: Observable<String>
     let oilValueObservable: Observable<String>
     let gasValueObservable: Observable<String>
