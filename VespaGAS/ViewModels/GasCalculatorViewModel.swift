@@ -3,21 +3,10 @@ import RxSwift
 
 struct GasCalculatorViewModel {
     private let disposeBag = DisposeBag()
-    private let oilValueSubject = BehaviorSubject(value: OilMix(amount:0))
-    private let gasValueSubject = BehaviorSubject(value: Gasoline(amount:0, unit:.Liter))
 
-    var oilMixValueObservable: Observable<String> = Observable.empty()
-    var oilValueObservable: Observable<String> {
-        return oilValueSubject.asObservable().map({ (oilMix) -> String in
-            return oilMix.description
-        })
-    }
-
-    var gasValueObservable: Observable<String> {
-        return gasValueSubject.asObservable().map({ (gasoline) -> String in
-            return gasoline.description
-        })
-    }
+    let oilMixValueObservable: Observable<String>
+    let oilValueObservable: Observable<String>
+    let gasValueObservable: Observable<String>
 
     init(gasObservable: Observable<Gasoline>, oilMixObservable: Observable<OilMix>) {
         oilMixValueObservable = Observable.combineLatest(gasObservable, oilMixObservable) { (gasoline, oilMix) -> String in
@@ -25,14 +14,12 @@ struct GasCalculatorViewModel {
             return oil.toUnit(.Milliliter).roundAmount().description.lowercaseString
         }.startWith(Oil(amount: 0, unit: .Milliliter).description.lowercaseString)
 
-        oilMixObservable.subscribeNext() { oilMix in
-            let oilSubject = self.oilValueSubject
-            oilSubject.onNext(oilMix)
-        }.addDisposableTo(disposeBag)
+        oilValueObservable = oilMixObservable
+            .map {$0.description}
+            .startWith(OilMix(amount: 0).description)
 
-        gasObservable.subscribeNext() { gasValue in
-            let gasSubject = self.gasValueSubject
-            gasSubject.onNext(gasValue)
-        }.addDisposableTo(disposeBag)
+        gasValueObservable = gasObservable
+            .map {$0.description}
+            .startWith(Gasoline(amount: 0, unit: .Liter).description)
     }
 }

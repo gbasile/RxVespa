@@ -82,13 +82,9 @@ class GasCalculatorViewModelTests: XCTestCase {
             oilMixObservable: Observable.empty()
         )
 
-        var isFirstEvent = true
         _ = viewModel.oilValueObservable.subscribeNext { (oilValue) in
-            if (isFirstEvent) {
                 XCTAssertEqual("0%", oilValue)
                 expectation.fulfill()
-                isFirstEvent = false
-            }
             }.addDisposableTo(disposeBag)
 
         self.waitForExpectationsWithTimeout(0.1, handler: nil)
@@ -102,7 +98,12 @@ class GasCalculatorViewModelTests: XCTestCase {
             oilMixObservable: Observable.just(OilMix(amount: 2))
         )
 
+        var isFirstEvent = true
         _ = viewModel.oilValueObservable.subscribeNext { oilValue in
+                if(isFirstEvent) {
+                    isFirstEvent = false
+                    return
+                }
                 XCTAssertEqual("2%", oilValue)
                 expectation.fulfill()
             }.addDisposableTo(disposeBag)
@@ -148,7 +149,12 @@ class GasCalculatorViewModelTests: XCTestCase {
             oilMixObservable: Observable.empty()
         )
 
+        var isFirstEvent = true
         _ = viewModel.gasValueObservable.subscribeNext { oilValue in
+            if (isFirstEvent) {
+                isFirstEvent = false
+                return
+            }
             XCTAssertEqual("3L", oilValue)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
