@@ -32,28 +32,28 @@ class VolumeTests: XCTestCase {
     }
 
 
-    func testItConvert4LitersIntoNewGasolineInMilliliters() {
+    func testItConvert4LitersIntoNewVolumeInMilliliters() {
         let volume = MockedVolume(amount: 4, unit: .Liter)
-        let newGasoline = volume.toUnit(.Milliliter)
+        let newVolume = volume.toUnit(.Milliliter)
 
-        let expectedGasoline = MockedVolume(amount: 4000, unit: .Milliliter)
+        let expectedVolume = MockedVolume(amount: 4000, unit: .Milliliter)
 
-        XCTAssertEqual(expectedGasoline, newGasoline)
+        XCTAssertEqual(expectedVolume, newVolume)
     }
 
-    func testItConvert450MilliliterIntoNewGasolineInLiter() {
+    func testItConvert450MilliliterIntoNewVolumeInLiter() {
         let volume = MockedVolume(amount: 450, unit: .Milliliter)
-        let newGasoline = volume.toUnit(.Liter)
+        let newVolume = volume.toUnit(.Liter)
 
-        let expectedGasoline = MockedVolume(amount: 0.45, unit: .Liter)
+        let expectedVolume = MockedVolume(amount: 0.45, unit: .Liter)
 
-        XCTAssertEqual(expectedGasoline, newGasoline)
+        XCTAssertEqual(expectedVolume, newVolume)
     }
 
     func testItRoundTheAmountFor4Point4Liter() {
         let volume = MockedVolume(amount: 4.4, unit: .Liter)
-        let expectedGasoline = MockedVolume(amount: 4, unit: .Liter)
+        let expectedVolume = MockedVolume(amount: 4, unit: .Liter)
 
-        XCTAssertEqual(expectedGasoline, volume.roundAmount())
+        XCTAssertEqual(expectedVolume, volume.roundAmount())
     }
 }
