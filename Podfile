@@ -7,6 +7,6 @@ target "VespaGAS" do
     pod 'RxSwift', '2.5'
     pod 'RxCocoa', '2.5'
     target "VespaGASTests" do
-	pod 'RxTests', '2.5'
+        pod 'RxTests', '2.5'
     end
  end
