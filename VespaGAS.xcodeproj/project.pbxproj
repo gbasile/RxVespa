@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		498632DA68262E0EF7F07149 /* Pods_VespaGAS_VespaGASTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3E9300DEE177DE6AA428F5 /* Pods_VespaGAS_VespaGASTests.framework */; };
 		B8A798931CD7A1FC00382995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798921CD7A1FC00382995 /* AppDelegate.swift */; };
 		B8A798951CD7A1FC00382995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798941CD7A1FC00382995 /* ViewController.swift */; };
 		B8A798981CD7A1FC00382995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A798961CD7A1FC00382995 /* Main.storyboard */; };
@@ -14,7 +15,7 @@
 		B8A7989D1CD7A1FC00382995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A7989B1CD7A1FC00382995 /* LaunchScreen.storyboard */; };
 		B8A798B71CD7A24600382995 /* GasCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798B61CD7A24600382995 /* GasCalculatorViewModel.swift */; };
 		B8A798B91CD7A26A00382995 /* GasCalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798B81CD7A26A00382995 /* GasCalculatorViewModelTests.swift */; };
-		E6D5A42A4ED890C79C0242FE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56424610A254411243BA4DDB /* Pods.framework */; };
+		FE4020ED38EBD773AA1051EF /* Pods_VespaGAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3B75E8D2B80D9529A1A151 /* Pods_VespaGAS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +30,10 @@
 
 /* Begin PBXFileReference section */
 		56424610A254411243BA4DDB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9F3BE469715CE90A55CB74 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		AEFD677CBA429BE19A7485F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		675F85E00A6DD4A92E56D252 /* Pods-VespaGAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VespaGAS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VespaGAS/Pods-VespaGAS.release.xcconfig"; sourceTree = "<group>"; };
+		898B1439CCE209591000E716 /* Pods-VespaGAS-VespaGASTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VespaGAS-VespaGASTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VespaGAS-VespaGASTests/Pods-VespaGAS-VespaGASTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F7EC7C7FB6B45D5D0CEF9B4 /* Pods-VespaGAS-VespaGASTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VespaGAS-VespaGASTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VespaGAS-VespaGASTests/Pods-VespaGAS-VespaGASTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF3B75E8D2B80D9529A1A151 /* Pods_VespaGAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VespaGAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A7988F1CD7A1FC00382995 /* VespaGAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VespaGAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A798921CD7A1FC00382995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A798941CD7A1FC00382995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +45,8 @@
 		B8A798A91CD7A1FC00382995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A798B61CD7A24600382995 /* GasCalculatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasCalculatorViewModel.swift; sourceTree = "<group>"; };
 		B8A798B81CD7A26A00382995 /* GasCalculatorViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasCalculatorViewModelTests.swift; sourceTree = "<group>"; };
+		CF3E9300DEE177DE6AA428F5 /* Pods_VespaGAS_VespaGASTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VespaGAS_VespaGASTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFCEB00DD0919C9118C1F888 /* Pods-VespaGAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VespaGAS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VespaGAS/Pods-VespaGAS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D5A42A4ED890C79C0242FE /* Pods.framework in Frameworks */,
+				FE4020ED38EBD773AA1051EF /* Pods_VespaGAS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,27 +62,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498632DA68262E0EF7F07149 /* Pods_VespaGAS_VespaGASTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CC46124E317D2E6E6ABF884 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AEFD677CBA429BE19A7485F6 /* Pods.debug.xcconfig */,
-				7E9F3BE469715CE90A55CB74 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		4209C5EB230F32683CE55B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				56424610A254411243BA4DDB /* Pods.framework */,
+				AF3B75E8D2B80D9529A1A151 /* Pods_VespaGAS.framework */,
+				CF3E9300DEE177DE6AA428F5 /* Pods_VespaGAS_VespaGASTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		892B5B9DF8BE05BEF54C7834 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFCEB00DD0919C9118C1F888 /* Pods-VespaGAS.debug.xcconfig */,
+				675F85E00A6DD4A92E56D252 /* Pods-VespaGAS.release.xcconfig */,
+				9F7EC7C7FB6B45D5D0CEF9B4 /* Pods-VespaGAS-VespaGASTests.debug.xcconfig */,
+				898B1439CCE209591000E716 /* Pods-VespaGAS-VespaGASTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B8A798861CD7A1FC00382995 = {
@@ -86,8 +96,8 @@
 				B8A798911CD7A1FC00382995 /* VespaGAS */,
 				B8A798A61CD7A1FC00382995 /* VespaGASTests */,
 				B8A798901CD7A1FC00382995 /* Products */,
-				0CC46124E317D2E6E6ABF884 /* Pods */,
 				4209C5EB230F32683CE55B06 /* Frameworks */,
+				892B5B9DF8BE05BEF54C7834 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,12 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8A798AC1CD7A1FC00382995 /* Build configuration list for PBXNativeTarget "VespaGAS" */;
 			buildPhases = (
-				2363C824BEBA633B0BC09496 /* Check Pods Manifest.lock */,
+				3CABD9D3F58F31491F49D640 /* 📦 Check Pods Manifest.lock */,
 				B8A7988B1CD7A1FC00382995 /* Sources */,
 				B8A7988C1CD7A1FC00382995 /* Frameworks */,
 				B8A7988D1CD7A1FC00382995 /* Resources */,
-				309B8BCF39E0A1811948491D /* Embed Pods Frameworks */,
-				574981193E278AFFD8D49CF9 /* Copy Pods Resources */,
+				16B48952756C8C9B637B325F /* 📦 Embed Pods Frameworks */,
+				8F8B5A4B65EAA2884DC0E104 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8A798AF1CD7A1FC00382995 /* Build configuration list for PBXNativeTarget "VespaGASTests" */;
 			buildPhases = (
+				264E2551D39F6AAF656DCC2A /* 📦 Check Pods Manifest.lock */,
 				B8A7989F1CD7A1FC00382995 /* Sources */,
 				B8A798A01CD7A1FC00382995 /* Frameworks */,
 				B8A798A11CD7A1FC00382995 /* Resources */,
+				C7D46EF6D1676693FB17D1B6 /* 📦 Embed Pods Frameworks */,
+				7FFAB8D75B8ED1D0E3FCBAB7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,14 +268,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2363C824BEBA633B0BC09496 /* Check Pods Manifest.lock */ = {
+		16B48952756C8C9B637B325F /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VespaGAS/Pods-VespaGAS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		264E2551D39F6AAF656DCC2A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,34 +298,64 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		309B8BCF39E0A1811948491D /* Embed Pods Frameworks */ = {
+		3CABD9D3F58F31491F49D640 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		574981193E278AFFD8D49CF9 /* Copy Pods Resources */ = {
+		7FFAB8D75B8ED1D0E3FCBAB7 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VespaGAS-VespaGASTests/Pods-VespaGAS-VespaGASTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F8B5A4B65EAA2884DC0E104 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VespaGAS/Pods-VespaGAS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7D46EF6D1676693FB17D1B6 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VespaGAS-VespaGASTests/Pods-VespaGAS-VespaGASTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -436,7 +494,7 @@
 		};
 		B8A798AD1CD7A1FC00382995 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEFD677CBA429BE19A7485F6 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = EFCEB00DD0919C9118C1F888 /* Pods-VespaGAS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VespaGAS/Info.plist;
@@ -448,7 +506,7 @@
 		};
 		B8A798AE1CD7A1FC00382995 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E9F3BE469715CE90A55CB74 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 675F85E00A6DD4A92E56D252 /* Pods-VespaGAS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VespaGAS/Info.plist;
@@ -460,6 +518,7 @@
 		};
 		B8A798B01CD7A1FC00382995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F7EC7C7FB6B45D5D0CEF9B4 /* Pods-VespaGAS-VespaGASTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = VespaGASTests/Info.plist;
@@ -472,6 +531,7 @@
 		};
 		B8A798B11CD7A1FC00382995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 898B1439CCE209591000E716 /* Pods-VespaGAS-VespaGASTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = VespaGASTests/Info.plist;

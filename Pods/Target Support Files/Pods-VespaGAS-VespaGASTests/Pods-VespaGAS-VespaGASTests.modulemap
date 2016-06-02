@@ -1,0 +1,6 @@
+framework module Pods_VespaGAS_VespaGASTests {
+  umbrella header "Pods-VespaGAS-VespaGASTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

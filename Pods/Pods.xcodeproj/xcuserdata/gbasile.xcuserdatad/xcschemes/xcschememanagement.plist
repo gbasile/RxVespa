@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-VespaGAS-VespaGASTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VespaGAS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -19,8 +24,39 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>34EEC68D8840215693133DCD62E33EA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73E62F74D67F8C5639535570017C85C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>92E3FD7ED6EE40090B9E76AB819167C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B496196614231D4DC7133E5CB0169DB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF7322CC96BD0880086965CDE9500EFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
