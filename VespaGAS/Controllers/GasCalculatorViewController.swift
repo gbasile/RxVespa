@@ -12,25 +12,25 @@ class GasCalculatorViewController: UIViewController {
 
     var viewModel: GasCalculatorViewModel? = nil
     let disposeBag = DisposeBag()
+    let store = VespaStore.sharedInstance
 
     override func viewDidLoad() {
-        let gasolineObservable = self.gasSlider.rx_value.asObservable().map { (amount) -> Gasoline in
-            return Gasoline(amount: amount, unit: .Liter)
+        _ = self.gasSlider.rx_value.asObservable().subscribeNext { (amount) in
+            self.store.dispatch(UpdateWithGasolineAction(gasoline: Gasoline(amount: amount, unit: .Liter)))
         }
 
-        let oilMixObservable = self.oilSlider.rx_value.asObservable().map { (amount) -> OilMix in
-            return OilMix(amount: amount)
+        _ = self.oilSlider.rx_value.asObservable().subscribeNext { (amount) in
+            self.store.dispatch(UpdateWithOilMixAction(oilMix: OilMix(amount: amount)))
         }
 
-        viewModel = GasCalculatorViewModel(gasObservable: gasolineObservable,
-                                           oilMixObservable: oilMixObservable)
+        viewModel = GasCalculatorViewModel()
 
-        _ = viewModel?.oilMixValueObservable.subscribeNext { oilValue in
-            self.oilValueLabel.text = oilValue
+        _ = viewModel?.oilMixValueObservable.subscribeNext { oilMixValue in
+            self.oilLabel.text = oilMixValue
         }.addDisposableTo(disposeBag)
 
         _ = viewModel?.oilValueObservable.subscribeNext { oilValue in
-            self.oilLabel.text = oilValue
+            self.oilValueLabel.text = oilValue
         }.addDisposableTo(disposeBag)
 
         _ = viewModel?.gasValueObservable.subscribeNext { gasValue in
