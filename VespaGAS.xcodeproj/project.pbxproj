@@ -22,6 +22,12 @@
 		B8A7989D1CD7A1FC00382995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A7989B1CD7A1FC00382995 /* LaunchScreen.storyboard */; };
 		B8A798B71CD7A24600382995 /* GasCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798B61CD7A24600382995 /* GasCalculatorViewModel.swift */; };
 		B8A798B91CD7A26A00382995 /* GasCalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A798B81CD7A26A00382995 /* GasCalculatorViewModelTests.swift */; };
+		B8BC88B21D0ACB3E00283EA3 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC88AD1D0ACB3D00283EA3 /* MainReducer.swift */; };
+		B8BC88B31D0ACB3E00283EA3 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC88AF1D0ACB3D00283EA3 /* State.swift */; };
+		B8BC88B41D0ACB3E00283EA3 /* VespaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC88B11D0ACB3E00283EA3 /* VespaStore.swift */; };
+		B8BC88B61D0ACBB200283EA3 /* OilMixState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC88B51D0ACBB200283EA3 /* OilMixState.swift */; };
+		B8BC88B91D0ACCCF00283EA3 /* OilMixActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC88B81D0ACCCF00283EA3 /* OilMixActions.swift */; };
+		B8BC88BB1D0AF2A800283EA3 /* OilMixReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC88BA1D0AF2A800283EA3 /* OilMixReducer.swift */; };
 		DA46F4F0A7A0BEFBDA282055 /* Pods_VespaGAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55A50B7AC36034C9A46F506 /* Pods_VespaGAS.framework */; };
 		FB27079C49C8C7542D6568DA /* Pods_VespaGAS_VespaGASTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FB1DBBD5B193432A9B34E5 /* Pods_VespaGAS_VespaGASTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +67,12 @@
 		B8A798A91CD7A1FC00382995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A798B61CD7A24600382995 /* GasCalculatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasCalculatorViewModel.swift; sourceTree = "<group>"; };
 		B8A798B81CD7A26A00382995 /* GasCalculatorViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasCalculatorViewModelTests.swift; sourceTree = "<group>"; };
+		B8BC88AD1D0ACB3D00283EA3 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
+		B8BC88AF1D0ACB3D00283EA3 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		B8BC88B11D0ACB3E00283EA3 /* VespaStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VespaStore.swift; sourceTree = "<group>"; };
+		B8BC88B51D0ACBB200283EA3 /* OilMixState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilMixState.swift; sourceTree = "<group>"; };
+		B8BC88B81D0ACCCF00283EA3 /* OilMixActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilMixActions.swift; sourceTree = "<group>"; };
+		B8BC88BA1D0AF2A800283EA3 /* OilMixReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilMixReducer.swift; sourceTree = "<group>"; };
 		C55A50B7AC36034C9A46F506 /* Pods_VespaGAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VespaGAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C4B283FE88867F25925E69 /* Pods-VespaGAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VespaGAS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VespaGAS/Pods-VespaGAS.release.xcconfig"; sourceTree = "<group>"; };
 		FD1020E0DD17D7123276A48E /* Pods-VespaGAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VespaGAS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VespaGAS/Pods-VespaGAS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +172,7 @@
 		B8A798911CD7A1FC00382995 /* VespaGAS */ = {
 			isa = PBXGroup;
 			children = (
+				B8BC88A51D0AC58300283EA3 /* Managers */,
 				B87127461CF8C90500EEA78D /* Extensions */,
 				B87127401CF8C55F00EEA78D /* Models */,
 				B8A798921CD7A1FC00382995 /* AppDelegate.swift */,
@@ -213,6 +226,51 @@
 				B8A798B81CD7A26A00382995 /* GasCalculatorViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B8BC88A51D0AC58300283EA3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B8BC88B71D0ACCB500283EA3 /* Actions */,
+				B8BC88AC1D0ACB3D00283EA3 /* Reducer */,
+				B8BC88AE1D0ACB3D00283EA3 /* State */,
+				B8BC88B01D0ACB3E00283EA3 /* Store */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B8BC88AC1D0ACB3D00283EA3 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				B8BC88AD1D0ACB3D00283EA3 /* MainReducer.swift */,
+				B8BC88BA1D0AF2A800283EA3 /* OilMixReducer.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		B8BC88AE1D0ACB3D00283EA3 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				B8BC88AF1D0ACB3D00283EA3 /* State.swift */,
+				B8BC88B51D0ACBB200283EA3 /* OilMixState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		B8BC88B01D0ACB3E00283EA3 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B8BC88B11D0ACB3E00283EA3 /* VespaStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		B8BC88B71D0ACCB500283EA3 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				B8BC88B81D0ACCCF00283EA3 /* OilMixActions.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,10 +476,16 @@
 				B85248931CFD975B00B4AEF7 /* Oil.swift in Sources */,
 				B80DD8CD1CD8AC5500ED9FEE /* GasCalculatorViewController.swift in Sources */,
 				B87127481CF8C90E00EEA78D /* Float+extensions.swift in Sources */,
+				B8BC88B91D0ACCCF00283EA3 /* OilMixActions.swift in Sources */,
+				B8BC88B61D0ACBB200283EA3 /* OilMixState.swift in Sources */,
+				B8BC88B31D0ACB3E00283EA3 /* State.swift in Sources */,
+				B8BC88BB1D0AF2A800283EA3 /* OilMixReducer.swift in Sources */,
 				B85248951CFD976700B4AEF7 /* Gasoline.swift in Sources */,
 				B871274A1CF8EBFF00EEA78D /* OilMix.swift in Sources */,
 				B87127421CF8C55F00EEA78D /* Volume.swift in Sources */,
+				B8BC88B21D0ACB3E00283EA3 /* MainReducer.swift in Sources */,
 				B8A798B71CD7A24600382995 /* GasCalculatorViewModel.swift in Sources */,
+				B8BC88B41D0ACB3E00283EA3 /* VespaStore.swift in Sources */,
 				B8A798931CD7A1FC00382995 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@ inhibit_all_warnings!
 target "VespaGAS" do
     pod 'RxSwift', '2.5'
     pod 'RxCocoa', '2.5'
+    pod 'ReSwift', '1.0'
     target "VespaGASTests" do
         pod 'RxTests', '2.5'
     end
